@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 import Modal from 'react-bootstrap/Modal';
-
 import { useParams } from "react-router-dom";
-// import Button from 'react-bootstrap/Button';
-// import Modal from 'react-bootstrap/Modal';
-import './ShowsInfo.css'
+import './ShowsInfo.css';
+
 const ShowInfo = () => {
     const { id} = useParams();
     const [showsInfo, setShowsInfo] = useState({});
@@ -24,7 +24,7 @@ const ShowInfo = () => {
     return (
         <div>
           
-            <h1 className="p-3">  {showsInfo?.name}</h1>
+            <h1 className="p-3">{showsInfo?.name}</h1>
 
             <div className="info-content d-flex justify-content-between align-items-start ">
                 <img src={showsInfo.image?.original} alt="show-img" />
@@ -42,23 +42,63 @@ const ShowInfo = () => {
             </div>
 
 
-            {/* modal */}
+            {/*========== modal============ */}
 
 
       <Modal show={show} onHide={handleClose}  >
         <Modal.Header closeButton>
-          <Modal.Title >{showsInfo.name}</Modal.Title>
+          <Modal.Title >Booking Information</Modal.Title>
         </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className="d-flex ">
             <img width={130} src={showsInfo.image?.original} alt="show-img" />
-            
-           <h6>Address: {showsInfo.network?.country?.name} </h6>
-           <h6>Schedule-days: {showsInfo.schedule?.days} </h6>
-                 <h6>Time: {showsInfo.schedule?.time} </h6>
+             <Form className="px-3">
+      <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+        <Form.Label column sm="2">
+          Name
+        </Form.Label>
+        <Col sm="10">
+          <Form.Control readOnly  defaultValue={`${showsInfo.name}`} ></Form.Control>
+        </Col>
+      </Form.Group>
+ <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+        <Form.Label column sm="2">
+          Price
+        </Form.Label>
+        <Col sm="10">
+          <Form.Control readOnly defaultValue='$100' />
+        </Col>
+              </Form.Group>
+      <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+        <Form.Label column sm="2">
+          Time
+        </Form.Label>
+        <Col sm="10">
+          <Form.Control readOnly defaultValue={`${showsInfo.schedule?.days}, ${showsInfo.schedule?.time}`} />
+        </Col>
+              </Form.Group>
+
+              <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+        <Form.Label column sm="2">
+          Your Name
+        </Form.Label>
+        <Col sm="10">
+          <Form.Control type="text" placeholder='Enter Your Name' />
+        </Col>
+              </Form.Group>
+              <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+        <Form.Label column sm="2">
+         Phone Number
+        </Form.Label>
+        <Col sm="10">
+          <Form.Control type="text" placeholder='Enter Your Number' />
+        </Col>
+      </Form.Group>
+    </Form>
+        
           </Modal.Body>
         <Modal.Footer>
           <button className="booking-button" onClick={handleClose}>
-            Close
+            Confirm
           </button>
           
         </Modal.Footer>
