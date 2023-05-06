@@ -10,9 +10,9 @@ const Shows = () => {
     console.log(shows);
     return (
         <div>
-            <h2 className="ms-2 py-4">Our Popular Shows Here</h2>
+            <h2 className="m-2 py-4 ">Our Popular Shows Here</h2>
             <div>
-                <div className="shows-container" >
+                <div className="shows-container m-2" >
                     {shows.map(allShow=><AllShows key={allShow.show?.id} allShow={allShow}></AllShows>)}
                   </div>
           </div>

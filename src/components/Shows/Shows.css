@@ -2,15 +2,19 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
-    
+  
       
 }   
 .shows-content{
 padding: 5px;
 font-weight: 600;
-color: rgb(3, 86, 86);
+background-color: rgb(72, 128, 128);
+border-radius: 5px;
+height: 460px;
 }
-
+a{
+    text-decoration: none;
+}
 .shows-content img{   
 width: 250px;
 height: 350px;
