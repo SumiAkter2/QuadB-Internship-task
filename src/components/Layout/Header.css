@@ -1,0 +1,9 @@
+.nav-bg{
+background-color: rgb(3, 86, 86);
+height: 100px;
+}
+.nav-link{
+font-size: 18px;
+font-weight: 700;
+color: rgb(249, 247, 247);
+}

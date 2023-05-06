@@ -1,5 +1,4 @@
 
-import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Button from 'react-bootstrap/Button';
 import { RouterProvider } from 'react-router-dom';
@@ -9,7 +8,6 @@ function App() {
 
   return (
     <>
-    
       <RouterProvider router={routes}></RouterProvider>
     </>
   )
