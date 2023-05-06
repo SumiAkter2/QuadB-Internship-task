@@ -1,3 +1,16 @@
 .footer{
-    background-color: rgb(6, 137, 137);
+   background: url('../../assets/footer-bg.png');
+   height: 100px;
+   background-position: center;
+   background-repeat:repeat-x;
+   background-size: cover;
+   background-clip: border-box;
+}
+.footer p{
+    text-align: center;
+    padding: 20px;
+}
+.footer-div{
+background-color: rgba(3, 86, 86, 0.812);
+height: 100px;
 }

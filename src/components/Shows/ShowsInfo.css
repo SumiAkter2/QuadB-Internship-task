@@ -4,3 +4,29 @@ width: 300px;
 .info-content{
     padding: 20px;
 }
+
+
+.booking-button {
+    width: 130px;
+    height: 40px;
+    background-image: linear-gradient(135deg,rgb(100, 149, 149) 0%, rgb(3, 86, 86) 100%);
+    box-shadow: 0 20px 30px -6px rgb(28, 89, 89);
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    color: white;
+}
+
+.booking-button:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+.booking-button:active {
+    opacity: 0.5;
+}
+.booking-button{
+    margin-top: 10px;
+transition: all 0.3s ease-in-out;
+}
