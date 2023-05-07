@@ -13,14 +13,13 @@ const AllShows = (props) => {
                 <div className="shows-content ">
    
                 <img src={show.image?.original} alt="show-img" />
-                <div className='d-flex pt-2 justify-content-between align-items-center text-light'>
+                <div className='d-flex pt-2 justify-content-between align-items-center '>
                 <div>
                 <h3>{show?.name}</h3>
                 <p>Genres: {show?.genres}</p>
                 
                     </div>
-                {/* <p>{show?.schedule?.summary}</p> */}
-                {/* <Button variant='outline-dark'>Info</Button> */}
+                
                </div>
         </div>
             </Link>
