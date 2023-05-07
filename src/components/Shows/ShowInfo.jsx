@@ -5,6 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Modal from 'react-bootstrap/Modal';
 import { useParams } from "react-router-dom";
 import './ShowsInfo.css';
+import { addToLocalStorage } from "../Utilities/LocalStorageDB";
+import Swal from "sweetalert2";
 
 const ShowInfo = () => {
     const { id} = useParams();
@@ -18,9 +20,21 @@ const ShowInfo = () => {
       .then((res) => res.json())
       .then((data) => {
           setShowsInfo(data);
-          console.log(showsInfo);
       });
-  }, [id,showsInfo]);
+  }, [id, showsInfo]);
+  
+  const handleBookingTicket = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const phone = e.target.phone.value;
+    const ticketId = { id }
+    const bookingInfo = [name, phone, ticketId];
+
+    addToLocalStorage(bookingInfo);
+    Swal.fire('Successfully Booking A Ticket')
+  console.log('add',bookingInfo);
+}
+
     return (
         <div>
           
@@ -51,7 +65,7 @@ const ShowInfo = () => {
         </Modal.Header>
           <Modal.Body className="d-flex ">
             <img width={130} src={showsInfo.image?.original} alt="show-img" />
-             <Form className="px-3">
+            <Form className="px-3" onSubmit={handleBookingTicket}>
       <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
         <Form.Label column sm="2">
           Name
@@ -82,7 +96,7 @@ const ShowInfo = () => {
           Your Name
         </Form.Label>
         <Col sm="10">
-          <Form.Control type="text" placeholder='Enter Your Name' />
+          <Form.Control type="text" name='name' placeholder='Enter Your Name' required />
         </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
@@ -90,16 +104,17 @@ const ShowInfo = () => {
          Phone Number
         </Form.Label>
         <Col sm="10">
-          <Form.Control type="text" placeholder='Enter Your Number' />
+          <Form.Control type="text" name='phone' placeholder='Enter Your Number'required />
         </Col>
-      </Form.Group>
+              </Form.Group>
+               <button className="booking-button" onClick={handleClose}>
+            Confirm
+          </button>
     </Form>
         
           </Modal.Body>
         <Modal.Footer>
-          <button className="booking-button" onClick={handleClose}>
-            Confirm
-          </button>
+         
           
         </Modal.Footer>
       </Modal>
