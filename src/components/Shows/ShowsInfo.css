@@ -3,6 +3,9 @@ width: 300px;
 }
 .info-content{
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -29,4 +32,14 @@ width: 300px;
 .booking-button{
     margin-top: 10px;
 transition: all 0.3s ease-in-out;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .info-content{
+        display: grid;
+        padding-top: 20px;
+           
+    }
 }

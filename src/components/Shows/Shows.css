@@ -1,9 +1,7 @@
 .shows-container{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-  
-      
+    gap: 10px;   
 }   
 .shows-content{
 padding: 5px;
@@ -12,10 +10,21 @@ background-color: rgb(72, 128, 128);
 border-radius: 5px;
 height: 460px;
 }
-a{
+a {
     text-decoration: none;
 }
 .shows-content img{   
 width: 250px;
 height: 350px;
+}
+@media only screen and (max-width: 480px) {
+    .shows-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+                .shows-content img {
+                    width: 250px;
+                    height: 350px;
+                }
 }

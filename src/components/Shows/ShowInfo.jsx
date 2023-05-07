@@ -40,9 +40,9 @@ const ShowInfo = () => {
           
             <h1 className="p-3">{showsInfo?.name}</h1>
 
-            <div className="info-content d-flex justify-content-between align-items-start ">
+            <div className="info-content ">
                 <img src={showsInfo.image?.original} alt="show-img" />
-                <div className="px-3">
+                <div className="px-3 pt-2">
                  <p>{showsInfo.name} {showsInfo.summary?.slice(18,180)} Paysinger. </p>
                  <h6>Language: {showsInfo.language} </h6>
                  <h6>Timezone: {showsInfo.network?.country?.timezone} </h6>

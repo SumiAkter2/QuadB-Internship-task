@@ -3,16 +3,17 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../../assets/quadb_tech-removebg-preview.png';
+import logo from '../../assets/quadb_tech-preview.png';
 import './Header.css'
 
 const Header = () => {
     return (
         <div >
-      <Navbar className='nav-bg' expand="lg">
+      <Navbar className='nav-bg' expand='lg'>
       <Container fluid>
-                    <Navbar.Brand href="#">
-                    <img src={logo} alt="Brand-logo" />
+                    <Navbar.Brand href="/" className='fs-2 fw-bold'>
+              <img  src={logo} alt="Brand-logo" />
+              QuadB Tech
                     </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
